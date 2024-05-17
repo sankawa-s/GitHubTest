@@ -4,8 +4,8 @@ phases:
   build:
     commands:
       - mkdir -p /opt/scripts
+      - mkdir -p /var/www/myapp/scripts
       - cp src/scripts/* /var/www/myapp/scripts/
-      - mkdir -p /var/www/myapp
       - aws deploy push --application-name sankawa-test --s3-location s3://sankawa-handson/artifact.zip --source src
 artifacts:
   files:
