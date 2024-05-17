@@ -3,9 +3,10 @@ version: 0.2
 phases:
   build:
     commands:
+      - DEPLOY_PATH="$(dirname "$(readlink -f "$0")")"
+      - mkdir -p "$DEPLOY_PATH/scripts/"
+      - cp src/scripts/* "$DEPLOY_PATH/scripts/"
       - aws deploy push --application-name sankawa-test --s3-location s3://sankawa-handson/artifact.zip --source src
-      - mkdir -p /opt/scripts/
-      - cp src/scripts/* /opt/scripts/
 artifacts:
   files:
     - '**/*'
