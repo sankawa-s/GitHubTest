@@ -7,6 +7,11 @@ files:
     destination: /opt/scripts/
 
 hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+      
   ValidateService:
     - location: scripts/register_to_lb.sh
       timeout: 300
