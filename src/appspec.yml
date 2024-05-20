@@ -6,14 +6,9 @@ files:
   - source: scripts/
     destination: /opt/scripts/
 
-hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-      runas: root
-      
+hooks:  
   ValidateService:
-    - location: scripts/register_to_lb.sh
+    - location: scripts/register_to_clb.sh
       timeout: 300
       runas: root
 
