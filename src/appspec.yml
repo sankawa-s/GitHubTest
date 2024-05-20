@@ -13,6 +13,6 @@ hooks:
       runas: root
 
   AfterAllowTraffic:
-    - location: scripts/deregister_from_lb.sh
+    - location: scripts/deregister_from_clb.sh
       timeout: 300
       runas: root
