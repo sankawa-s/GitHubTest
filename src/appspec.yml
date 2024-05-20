@@ -6,11 +6,11 @@ files:
 
 hooks:
   ValidateService:
-    - location: scripts/register_to_lb.sh
+    - location: /opt/scripts/register_to_lb.sh
       timeout: 300
       runas: root
 
   AfterAllowTraffic:
-    - location: scripts/deregister_from_lb.sh
+    - location: /opt/scripts/deregister_from_lb.sh
       timeout: 300
       runas: root
