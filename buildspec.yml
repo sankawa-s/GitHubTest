@@ -3,9 +3,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - sudo mkdir -p /opt/scripts
-      - cp src/scripts/* /opt/scripts/
-      - chmod +x /opt/scripts/*.sh
       - aws deploy push --application-name sankawa-test --s3-location s3://sankawa-handson/artifact.zip --source src
 artifacts:
   files:
