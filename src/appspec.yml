@@ -3,14 +3,16 @@ os: linux
 files:
   - source: index.html
     destination: /var/www/html/
+  - source: scripts/
+    destination: /opt/scripts/
 
 hooks:
   ValidateService:
-    - location: /scripts/register_to_lb.sh
+    - location: scripts/register_to_lb.sh
       timeout: 300
       runas: root
 
   AfterAllowTraffic:
-    - location: /scripts/deregister_from_lb.sh
+    - location: scripts/deregister_from_lb.sh
       timeout: 300
       runas: root
