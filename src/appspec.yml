@@ -3,8 +3,6 @@ os: linux
 files:
   - source: index.html
     destination: /var/www/html/
-  - source: scripts/
-    destination: /opt/scripts/
 
 hooks:  
   ValidateService:
