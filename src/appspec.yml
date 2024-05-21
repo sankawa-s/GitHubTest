@@ -4,13 +4,13 @@ files:
   - source: index.html
     destination: /var/www/html/
 
-hooks:  
-  ValidateService:
-    - location: scripts/register_to_clb.sh
-      timeout: 300
-      runas: root
-
-  AfterAllowTraffic:
-    - location: scripts/deregister_from_clb.sh
-      timeout: 300
-      runas: root
+#hooks:  
+#  ValidateService:
+#    - location: scripts/register_to_clb.sh
+#      timeout: 300
+#      runas: root
+#
+#  AfterAllowTraffic:
+#    - location: scripts/deregister_from_clb.sh
+#      timeout: 300
+#      runas: root
