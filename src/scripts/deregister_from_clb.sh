@@ -1,7 +1,17 @@
 #!/bin/bash
 
 # CLBの名前
-CLB_NAME="sankawa-deploytest"
+if [ "${DEPLOYMENT_GROUP_NAME}" == "web" ]; then
+    CLB_NAME="sankawa-deploytest"
+elif [ "${DEPLOYMENT_GROUP_NAME}" == "Training" ]; then
+    CLB_NAME="training-load-balancer"
+elif [ "${DEPLOYMENT_GROUP_NAME}" == "Production" ]; then
+    CLB_NAME="production-load-balancer"
+else
+    echo "Unknown deployment group: ${DEPLOYMENT_GROUP_NAME}"
+    exit 1
+fi
+
 
 # インスタンスIDを取得
 INSTANCE_ID=$(TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" \
